@@ -1,4 +1,5 @@
 /chicago/
+/.idea
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/inspectionProfiles/profiles_settings.xml
@@ -8,3 +9,4 @@
 /sydney_weather_bk1.ipynb
 /.ipynb_checkpoints/sydney_weather_bk1-checkpoint.ipynb
 /rain_aus/weatherAUS.csv
+/.ipynb_checkpoints/
