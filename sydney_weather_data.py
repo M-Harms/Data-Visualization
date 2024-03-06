@@ -2,6 +2,10 @@ import pandas as pd
 
 
 def load_data():
+    """Load and process data from weather stations in Sydney, Australia.
+    Data obtained from:
+    https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package?resource=download&select=weatherAUS.csv
+    """
     # Read in CSV
     df_all = pd.read_csv('rain_aus/weatherAUS.csv')
     # Take only the rows from Sydney

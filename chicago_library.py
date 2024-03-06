@@ -6,6 +6,7 @@ import pandas as pd
 
 def load_data():
     """Load and Clean Data from the Chicago Libraries Dataset"""
+
     final_column_names = ['branch', 'january', 'february', 'march',
                           'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november',
                           'december', 'year']
