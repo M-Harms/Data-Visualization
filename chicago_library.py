@@ -12,6 +12,8 @@ def load_data():
 
     path = r'./chicago/library_data'  # use your path
     all_files = glob.glob(path + '/*.csv')
+
+    # Create a list to hold all the files
     dfs = list()
 
     # Import all the library data
@@ -85,6 +87,7 @@ def load_data():
 
     df_locations['region'] = pd.Series(np.select(conditions, outputs, 'City Wide'))
 
+    # Roosevelt was not in the 2023 dataset, and needed to be added manually
     extra_locations = pd.DataFrame([['Roosevelt', '1101 W. Taylor Street', 'CHICAGO', 60607.0, 'NA', 'West']],
                                    columns=df_locations.columns)
 
@@ -95,16 +98,16 @@ def load_data():
     df3 = pd.merge(df2, df_locations, how='left', on=['branch'])
     df3 = df3.drop(['address', 'city', 'zip', 'location'], axis=1)
 
-    # Change the columns to a more usful format, and create a 'date' column
+    # Change the columns to a more useful format, and create a 'date' column
     month_d = {'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6, 'july': 7,
                'august': 8, 'september': 9, 'october': 10, 'november': 11, 'december': 12}
     df_final = df3.melt(['branch', 'year', 'region'], var_name='month', value_name='transactions')
     df_final['month'] = df_final['month'].map(month_d)
+
+    # Add a temporary day column to create the date column
     df_final['day'] = 1
     df_final['date'] = pd.to_datetime(df_final[['year', 'month', 'day']], )  # + MonthEnd(0)
     df_final.drop(['day'], axis=1, inplace=True)
-
-    # pd.to_datetime(tmp)
 
     # Drop the renewals, so we just have initial checkouts
     df_final2 = df_final[df_final['branch'] != 'Renewals'].copy()
