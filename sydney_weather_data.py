@@ -42,13 +42,15 @@ def load_data():
 
     # Drop rows with NA Values
     # Drop RainTomorrow, since it is supposed to be truth
-    df.dropna(subset='WindDir9am', inplace=True)
-    df.dropna(subset='WindDir3pm', inplace=True)
+    #df.dropna(subset='WindDir9am', inplace=True)
+    #df.dropna(subset='WindDir3pm', inplace=True)
+    df.dropna(subset='WindSpeed9am', inplace=True)
+    df.dropna(subset='WindSpeed3pm', inplace=True)
     df.dropna(subset='Cloud9am', inplace=True)
     df.dropna(subset='Cloud3pm', inplace=True)
 
     # The minimum for gusts is 17. The NWS in the US only records gusts above 16 knots.
-    # Because of that, I am assuming null values, had no wind gusts above that threshold, so I am replacing them with 0.
+        # Because of that, I am assuming null values, had no wind gusts above that threshold, so I am replacing them with 0.
     df['WindGustSpeed'].fillna(0, inplace=True)
 
     # Select columns to take the median of for NA values. I took the median of the values, grouped by month, since the
