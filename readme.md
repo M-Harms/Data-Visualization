@@ -1,3 +1,5 @@
+# Data Visualizations
+This is a collection of multiple visualizations from multiple datasets.
 # Chicago Public Libraries
 ## Dataset Information
 This data was obtained from the City of Chicago. It contains information about the amount of books checked out and renewed in Chicago Public Libraries by branch. 
