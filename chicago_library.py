@@ -1,3 +1,19 @@
+""" This cleans and prepared data that was obtained from the City of Chicago.
+https://catalog.data.gov/dataset/libraries-2023-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2022-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2021-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2020-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2019-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2018-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2017-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2016-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2015-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2014-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2013-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2012-circulation-by-location
+https://catalog.data.gov/dataset/libraries-2011-circulation-by-location
+"""
+
 import glob
 
 import numpy as np
@@ -16,7 +32,7 @@ def load_data():
     # Create a list to hold all the files
     dfs = list()
 
-    # Import all the library data
+    # Import all the library data and add them to the dfs list
     for file in all_files:
         year = file[-8:-4]
         df_tmp = pd.read_csv(file)
@@ -44,7 +60,7 @@ def load_data():
         'Downloadable Media')
     df2 = df2.replace(['Online Renewals', 'Itivia Renewal', 'Itivia Renewals', 'Auto-Renewals',
                        'Patron Initiated renewals (automated phone)', 'Patron Initiated renewals (online)'],
-                      'Renewals', )
+                      'Renewals')
     df2 = df2.replace(['Legler', 'Legler Regional'], 'Legler')
     df2 = df2.replace(['Woodson Regional', 'Woodson Regional Library'], 'Woodson')
     df2 = df2.replace(['Sulzer Regional', 'Sulzer Regional Library'], 'Sulzer')
