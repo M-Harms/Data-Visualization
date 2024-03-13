@@ -1,7 +1,7 @@
 # Data Visualizations
 This is a collection of multiple visualizations from multiple datasets.
-# Chicago Public Libraries
-## Dataset Information
+## Chicago Public Libraries
+### Dataset Information
 This data was obtained from the City of Chicago. It contains information about the amount of books checked out and renewed in Chicago Public Libraries by branch. 
 
 It was compiled with datasets corresponding to each year: 
@@ -20,14 +20,12 @@ It was compiled with datasets corresponding to each year:
 [2011](https://catalog.data.gov/dataset/libraries-2011-circulation-by-location), 
 [2010](https://catalog.data.gov/dataset/libraries-2010-circulation-by-location)
 
-
-## Visualizations
-### Wind Speeds and Directions in the City of Sydney
+### Visualizations
 ![Area chart of Chicago Library transactions](./images/chicago_library_transactions.svg)
-# Sydney Weather
-## Dataset Information
+## Sydney Weather
+### Dataset Information
 This data was obtained from [Rain in Australia](https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package?resource=download&select=weatherAUS.csv). The data is copyrighted by the Australian Bureau of Meteorology, and collected by Joe Young. 
-## Visualizations
+### Visualizations
 ![Polar chart of Sydney Wind Direction with 4 directions](./images/sydney_wind_direction_condensed.svg)
-![Double bar chart of Sydney Windspeeds comparing the morning and the afternoon by season](./images/sydney_median_windspeed.svg)
-![Two violin charts showing morning and afternoon windspeeds](./images/sydney_windspeeds_violin.svg)
+![Double bar chart of Sydney wind speeds comparing the morning and the afternoon by season](./images/sydney_median_windspeed.svg)
+![Two violin charts showing morning and afternoon wind speeds](./images/sydney_windspeeds_violin.svg)
